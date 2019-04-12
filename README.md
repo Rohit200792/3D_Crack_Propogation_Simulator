@@ -20,7 +20,6 @@ Parameters to run crackGen3D.py:
     mode = "UP"
     crackGen3d(no_of_stages, mode)
     createPVDFile(no_of_stages, mode)
-
     mode = "DOWN"
     crackGen3d(no_of_stages, mode)
     createPVDFile(no_of_stages, mode)
