@@ -1,4 +1,4 @@
-# Crack-_Mesh_DAT_PVD
+# CrackMeshDatToPVD
 This project shows how to convert a .dat file into .csv, .vtk, .vtp and .pvd file compatible for time varying visualization in Para View. A sample input .dat file format is included for reference. 
 
 There are two .py files crackGenPlane.py and crackGen3D.py.
