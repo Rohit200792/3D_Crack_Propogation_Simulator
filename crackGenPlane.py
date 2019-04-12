@@ -2,6 +2,26 @@
 import re
 import os, sys
 import vtk
+import os
+
+def createfolder():
+    try:
+        if os.path.exists("./Crack Data"):
+            os.removedirs("/Crack Data")
+        os.makedirs("./Crack Data")
+        os.makedirs("./Crack Data/Plane")
+        os.makedirs("./Crack Data/Plane/VTK")
+        os.makedirs("./Crack Data/Plane/VTP")
+
+        os.makedirs("./Crack Data/3D_UP")
+        os.makedirs("./Crack Data/3D_UP/VTK")
+        os.makedirs("./Crack Data/3D_UP/VTP")
+
+        os.makedirs("./Crack Data/3D_DOWN")
+        os.makedirs("./Crack Data/3D_DOWN/VTK")
+        os.makedirs("./Crack Data/3D_DOWN/VTP")
+    except:
+        print("Could not create directory for storing output files")
 
 def convertToCSV(no_of_stages):
     with open("sp2_lc2_test_crack2.dat", "r") as file:
@@ -161,8 +181,11 @@ def createPVDFile(no_of_stages):
     with open('D:\CS 6635 Vis or Data Sceince\Final Project\Crack Data\Plane\VTP\crack_data.pvd', mode='w') as file:
         file.write(data)
 
+def main():
+    no_of_stages = 98
+    createfolder()
+    convertToCSV(no_of_stages)
+    createPVDFile(no_of_stages)
 
-
-no_of_stages=98
-convertToCSV(no_of_stages)
-createPVDFile(no_of_stages)
+if __name__ == '__main__':
+    main()
