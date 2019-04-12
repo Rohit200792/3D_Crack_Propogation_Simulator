@@ -79,11 +79,11 @@ def crackGen3d(no_of_stages, mode):
         index+=1
 
     data_final=("\n").join(data_list_final[:-1])
-    with open('Crack Data\crack_data3D_'+folder_type+'.csv', mode='w') as file:
+    with open('Crack Data\crack_data3D_'+mode+'.csv', mode='w') as file:
         file.write(data_final)
 
     for i in range(1,no_of_stages+1):
-        convertToVTK(data_final, i, folder_type)
+        convertToVTK(data_final, i, mode)
 
 def calculateNormals(data_list, normals_dict, points_dict, stage_number):
     count=0
@@ -134,7 +134,7 @@ def calculateNormals(data_list, normals_dict, points_dict, stage_number):
 
 
 
-def convertToVTK(data_formatted, stage_to_extract, folder_type):
+def convertToVTK(data_formatted, stage_to_extract, mode):
     data_list=data_formatted.split("\n")
     header="# vtk DataFile Version 2.0 \n" \
             "Crack Data \n" \
@@ -217,7 +217,6 @@ def convertToVTK(data_formatted, stage_to_extract, folder_type):
         if count==0:
             dataVTK+="0.0 0.0 0.0 1.0 \n"
         elif(count>skip and count-skip<no_points):
-            print(row)
             row=float((row.split(",")[3]).strip())
             row=row*scale
             rgb=str(row)+" "+"0.0"+" "+str(row)+" 1.0 \n"
@@ -229,12 +228,12 @@ def convertToVTK(data_formatted, stage_to_extract, folder_type):
         fileno="0"+str(stage_to_extract)
     else:
         fileno=str(stage_to_extract)
-    with open('Crack Data\\3D_'+folder_type+'\VTK\crack_data_3D_vtk'+ \
+    with open('Crack Data\\3D_'+mode+'\VTK\crack_data_3D_vtk'+ \
               fileno+'.vtk', mode='w') as file:
         file.write(dataVTK)
 
-    vtkf='Crack Data\\3D_'+folder_type+'\VTK\crack_data_3D_vtk'+fileno+'.vtk'
-    vtpf='Crack Data\\3D_'+folder_type+'\VTP\crack_data_3D_vtp'+fileno+'.vtp'
+    vtkf='Crack Data\\3D_'+mode+'\VTK\crack_data_3D_vtk'+fileno+'.vtk'
+    vtpf='Crack Data\\3D_'+mode+'\VTP\crack_data_3D_vtp'+fileno+'.vtp'
     vtk2vtp(vtkf, vtpf, binary=False)
 
 
@@ -253,7 +252,7 @@ def vtk2vtp(invtkfile, outvtpfile, binary=False):
     writer.Update()
 
 
-def createPVDFile(no_of_stages, folder_type):
+def createPVDFile(no_of_stages, mode):
     header="<?xml version=\"1.0\"?> \n" \
                 "<VTKFile type=\"Collection\" version=\"0.1\">\n" \
                     "  <Collection>\n"
@@ -271,14 +270,18 @@ def createPVDFile(no_of_stages, folder_type):
 
     data+=tail
 
-    with open('Crack Data\\3D_'+folder_type+'\VTP\crack_data_3D_'+folder_type+'.pvd', mode='w') as file:
+    with open('Crack Data\\3D_'+mode+'\VTP\crack_data_3D_'+mode+'.pvd', mode='w') as file:
         file.write(data)
 
-no_of_stages=98
-folder_type="UP"
-crackGen3d(no_of_stages,folder_type)
-createPVDFile(no_of_stages, folder_type)
+def main():
+    no_of_stages = 98
+    mode = "UP"
+    crackGen3d(no_of_stages, mode)
+    createPVDFile(no_of_stages, mode)
 
-folder_type="DOWN"
-crackGen3d(no_of_stages,folder_type)
-createPVDFile(no_of_stages, folder_type)
+    mode = "DOWN"
+    crackGen3d(no_of_stages, mode)
+    createPVDFile(no_of_stages, mode)
+
+if __name__ == '__main__':
+    main()
