@@ -1,5 +1,5 @@
 # CrackMeshDatToPVD
-This project shows how to convert a .dat file into .csv, .vtk, .vtp and .pvd file compatible for time varying visualization in Para View. A sample input .dat file format is included for reference. 
+A 3D Visualization for Crack Propagation. This project shows how to convert a 2D planar data for crack boundary into a corresponding 3D view. It also show how to convert a .dat file into a  .csv, .vtk, .vtp and .pvd file compatible for time varying visualization in Para View. A sample input .dat file format is included for reference. 
 
 There are two .py files crackGenPlane.py and crackGen3D.py.
 
