@@ -1,4 +1,4 @@
-# CrackMeshDatToPVD
+# 3D_Crack_Propogation_Simulator
 A 3D Visualization for Crack Propagation using Boundary Element Method.
 
 ## Overview
