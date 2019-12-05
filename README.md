@@ -1,13 +1,17 @@
 # CrackMeshDatToPVD
-A 3D Visualization for Crack Propagation. This project shows how to convert a 2D planar data for crack boundary into a corresponding 3D view. It also show how to convert a .dat file into a  .csv, .vtk, .vtp and .pvd file compatible for time varying visualization in Para View. A sample input .dat file format is included for reference. 
+A 3D Visualization for Crack Propagation using Boundary Element Method.
 
+## Overview
+This source code shows how to convert a 2D planar data for crack boundary into a corresponding 3D view. It uses two python scripts to convert a .dat file obtained from a crack simulationn into corresponding .vtk, .vtp and .pvd file compatible for time varying visualization in Para View. A sample input .dat file format is included for reference. 
+
+## API Descriotion
 There are two .py files crackGenPlane.py and crackGen3D.py.
 
 crackGenPlane.py actually reads the .dat input file and creates the corresponding .csv, .vtk, .vtp and .pvd files for planar view of crack as present in the input file.
 
 crackGen3D.py reads the output .csv file from crackGenPlane.py to create a 3D view of the crack based on vertex normals.
 
-Parameters to run crackGenPlane.py:
+### Parameters to run crackGenPlane.py:
 
     def main():
         no_of_stages = 98 #total number of stages of crack opening
@@ -19,7 +23,7 @@ Parameters to run crackGenPlane.py:
             convertToVTK(data_formatted, colormap, i) #generate a .vtk and .vtp file for each stage
         createPVDFile(no_of_stages) #create a .pvd file linking all stages)
     
-Parameters to run crackGen3D.py:
+### Parameters to run crackGen3D.py:
 
     def main():
         no_of_stages = 98 #total number of stages of crack opening
@@ -41,21 +45,22 @@ Parameters to run crackGen3D.py:
     
 crackGen3D.py reads the csv file output from crackGenPlane.py so you will need to run crackGenPlane.py first and then run crackGen3D.py.
 
-Sample Output on Paraview:
+## Sample Output on Paraview:
 
-Planar Crack from Simulation Data:
+### Planar Crack from Simulation Data:
 
 ![Sample Output](./SS1.PNG)
 
-Reconstructed 3D View for  Initial State of Crack:
+### Reconstructed 3D View for  Initial State of Crack:
 
 ![Sample Output](./SS2.PNG)
 
-Reconstructed 3D View for  Final State of Crack Within Material:
+### Reconstructed 3D View for  Final State of Crack Within Material:
 
 ![Sample Output](./SS3.PNG)
 
-Crack Opening in Final Stage:
+### Crack Opening in Final Stage:
 
 ![Sample Output](./SS4.PNG)
+
 
