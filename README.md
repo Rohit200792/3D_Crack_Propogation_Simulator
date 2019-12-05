@@ -42,5 +42,11 @@ Parameters to run crackGen3D.py:
 crackGen3D.py reads the csv file output from crackGenPlane.py so you will need to run crackGenPlane.py first and then run crackGen3D.py.
 
 Sample Output on Paraview:
+![Sample Output](./SS1.PNG)
+
+![Sample Output](./SS2.PNG)
+
+![Sample Output](./SS3.PNG)
 
 ![Sample Output](./SS4.PNG)
+
