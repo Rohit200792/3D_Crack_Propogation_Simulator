@@ -44,14 +44,18 @@ crackGen3D.py reads the csv file output from crackGenPlane.py so you will need t
 Sample Output on Paraview:
 
 Planar Crack from Simulation Data:
+
 ![Sample Output](./SS1.PNG)
 
 Reconstructed 3D View for  Initial State of Crack:
+
 ![Sample Output](./SS2.PNG)
 
 Reconstructed 3D View for  Final State of Crack Within Material:
+
 ![Sample Output](./SS3.PNG)
 
 Crack Opening in Final Stage:
+
 ![Sample Output](./SS4.PNG)
 
