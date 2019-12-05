@@ -43,4 +43,4 @@ crackGen3D.py reads the csv file output from crackGenPlane.py so you will need t
 
 Sample Output on Paraview:
 
-![Sample Output](SS4.png)
+![Sample Output](./SS4.png)
