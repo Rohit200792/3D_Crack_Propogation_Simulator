@@ -40,3 +40,7 @@ Parameters to run crackGen3D.py:
         createPVDFile(no_of_stages, mode) #create a .pvd file linking all stages
     
 crackGen3D.py reads the csv file output from crackGenPlane.py so you will need to run crackGenPlane.py first and then run crackGen3D.py.
+
+Sample Output on Paraview:
+
+![Sample Output](Docs/SS4.png)
