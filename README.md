@@ -2,9 +2,14 @@
 A 3D Visualization for Crack Propagation using Boundary Element Method.
 
 ## Overview
-This source code shows how to convert a 2D planar data for crack boundary into a corresponding 3D view. It uses two python scripts to convert a .dat file obtained from a crack simulationn into corresponding .vtk, .vtp and .pvd file compatible for time varying visualization in Para View. A sample input .dat file format is included for reference. 
+This source code shows how to convert a 2D planar data for crack boundary into a corresponding 3D view. It uses two python scripts to convert a .dat file obtained from a crack simulationn into corresponding .vtk, .vtp and .pvd file compatible for time varying visualization in Para View. A sample input .dat file format is included for reference.
 
-## API Descriotion
+## Links
+[1. Project Report](./Docs/Project_Report.pdf)
+
+[2. Project Presentation](./Docs/Project_Presentation.pdf)
+
+## API Description
 There are two .py files crackGenPlane.py and crackGen3D.py.
 
 crackGenPlane.py actually reads the .dat input file and creates the corresponding .csv, .vtk, .vtp and .pvd files for planar view of crack as present in the input file.
@@ -49,18 +54,18 @@ crackGen3D.py reads the csv file output from crackGenPlane.py so you will need t
 
 ### Planar Crack from Simulation Data:
 
-![Sample Output](./SS1.PNG)
+![Sample Output](./Docs/SS1.PNG)
 
 ### Reconstructed 3D View for  Initial State of Crack:
 
-![Sample Output](./SS2.PNG)
+![Sample Output](./Docs/SS2.PNG)
 
 ### Reconstructed 3D View for  Final State of Crack Within Material:
 
-![Sample Output](./SS3.PNG)
+![Sample Output](./Docs/SS3.PNG)
 
 ### Crack Opening in Final Stage:
 
-![Sample Output](./SS4.PNG)
+![Sample Output](./Docs/SS4.PNG)
 
 
